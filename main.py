@@ -18,10 +18,11 @@ NMAP_PATH = '/usr/bin/nmap'
 
 if __name__ == '__main__':
     try:
-        print('[*] Starting simple scan...')
+        print('[+] Starting simple scan...')
         # Constructing the command for the simple scan and splitting it into a list
-        cmd = f'{NMAP_PATH} -p- -oX {FILENAME_XML} {HOST}'.split(' ')
+        cmd = f'{NMAP_PATH} -p- -T4 -oX {FILENAME_XML} {HOST}'.split(' ')
         # Running the simple scan command and suppressing stdout
+        print('[*] Simple scan in progress...')
         subprocess.run(cmd, stdout=subprocess.DEVNULL)
         print('[+] Simple scan finished!')
     except Exception as e:
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     try:
         print('[*] Starting advanced scan...')
         # Constructing the command for the advanced scan and splitting it into a list
-        cmd = f'{NMAP_PATH} -sV -A -p{ports} {HOST} -oN {FILENAME_TXT}'.split(' ')
+        cmd = f'{NMAP_PATH} -sV -A -T4 -p{ports} {HOST} -oN {FILENAME_TXT}'.split(' ')
         # Running the advanced scan command
         subprocess.run(cmd)
     except Exception as e:
