@@ -40,7 +40,19 @@ python3 enhanced_nmap_scanner.py <host> [--output OUTPUT_FILE]
 - `<host>`: Target host or IP address to scan
 - `--output OUTPUT_FILE` or `-o OUTPUT_FILE`: Optional. Specify the output file name for the scan results (default: nmap_out.txt)
 
+**OR**
+
+If you've added the script to your .local/bin
+
+```bash
+nmen <host> [--output OUTPUT_FILE]
+```
+
 ## Example
 ```commandline
 python3 enhanced_nmap_scanner.py 192.168.1.1 --output scan_results.txt
+```
+**OR**
+```bash
+nmen 192.168.1.1 --output scan_results.txt
 ```
